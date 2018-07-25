@@ -74,13 +74,14 @@ int main(int argc, char* argv[]) {
         dst_port = ntohs(tcp_hdr->dest);
 
         data = (char *)tcp_hdr + (tcp_hdr->th_off * 4);
+        
         printf("[%s] %15s:%-5d -> [%s] %15s:%-5d\n", 
           shost, src_ip, src_port,
           dhost, dst_ip, dst_port
         );
         for(int i=0;i<16;i++) printf("%c", data[i]); 
-
         printf("\n\n");
+
         free(shost);
         free(dhost);
         break;
