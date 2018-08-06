@@ -79,7 +79,7 @@ int main(int argc, char* argv[]) {
           shost, src_ip, src_port,
           dhost, dst_ip, dst_port
         );
-        for(int i=0;i<16;i++) printf("%c", data[i]); 
+        for(int i=0; i<sizeof(data)/sizeof(char); i++) printf("%c", data[i]); 
         printf("\n\n");
 
         free(shost);
